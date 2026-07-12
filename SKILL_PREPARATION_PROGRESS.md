@@ -160,6 +160,33 @@ These are project tasks, not skill gaps:
 
 ---
 
+## Git Repository Status
+
+| Item | Status |
+|------|--------|
+| Local git init | ✅ Done |
+| Initial commit | ✅ `f7fd285` on `master` |
+| Remote configured | ✅ `git@github.com:smatgithub/E-App.git` |
+| Pushed to GitHub | ⏳ **Pending** — create empty repo on GitHub first, then run push |
+
+### Push commands (after creating GitHub repo)
+
+1. Go to https://github.com/new → name: `E-App` → **do not** add README (already exists locally)
+2. Run:
+
+```bash
+cd /Users/som_home/E-App
+git push -u origin master
+```
+
+Or with GitHub CLI after `brew install gh && gh auth login`:
+
+```bash
+gh repo create E-App --private --source=. --remote=origin --push
+```
+
+---
+
 ## Change Log
 
 | Version | Date | Author | Summary |
