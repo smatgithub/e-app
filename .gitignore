@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Build outputs
+dist/
+build/
+.expo/
+.next/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+
+# Mobile
+android/app/build/
+ios/Pods/
+*.jks
+*.p8
+*.p12
+*.mobileprovision
+
+# Firebase / Google
+google-services.json
+GoogleService-Info.plist
+
+# Misc
+*.pem
+.tmp/
