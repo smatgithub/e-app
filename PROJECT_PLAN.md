@@ -2,6 +2,8 @@
 
 > **Companion to:** `REQUIREMENTS.md`
 > **Purpose:** Convert the signed requirements into a solid, phase-wise execution plan with a decision register, an information/data collection task list, and a live project progress tracker.
+> **Daily tasks:** See **`DAILY_TASK_PLAN.md`** for date-wise tasks by person.
+> **Document map:** See **`DOCUMENT_GUIDE.md`** for which file to follow when.
 > **Status:** Draft v0.1
 > **Owner (Project Lead / Tech Lead):** Somnath Das
 > **Business Owner / UAT:** Sarthak Ghosh
@@ -16,7 +18,9 @@
 3. **Section 5 (Information & Data Collection)** — chase list for the business owner.
 4. **Section 6 (Phase Plan)** — the phase-by-phase roadmap with exit gates.
 5. **Section 7 (Progress Tracker)** — update weekly. This is the single source of truth for status.
-6. **Update the Change Log** at the bottom every time you edit this file.
+6. **`DAILY_TASK_PLAN.md`** — date-wise tasks by Somnath / Sarthak (check daily).
+7. **`DOCUMENT_GUIDE.md`** — which file to follow for what.
+8. **Update the Change Log** at the bottom every time you edit this file.
 
 **Status legend (use everywhere):**
 `🔲 Not started` · `🔄 In progress` · `⏳ Blocked/Waiting` · `✅ Done` · `❌ Dropped`
@@ -300,45 +304,47 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 | Field | Value |
 |-------|-------|
-| Reporting date | _YYYY-MM-DD_ |
+| Reporting date | 2026-07-13 |
 | Current phase | Phase 0 |
 | Overall status | 🔄 In progress |
-| Overall % complete | 0% |
-| Schedule health | 🟢 / 🟡 / 🔴 |
-| Top risk right now | Timeline & undecided stack |
-| Next milestone | Requirements sign-off + decisions closed |
+| Overall % complete | 5% |
+| Schedule health | 🟢 |
+| Top risk right now | Master data not received; P0 decisions open |
+| Next milestone | Requirements sign-off (19 Jul 2026) |
+| Go-live target | 30 Nov 2026 |
+| Daily task file | `DAILY_TASK_PLAN.md` |
 
 ### 7.2 Phase Board
 
 | Phase | Status | % | Start | Target end | Actual end | Exit gate met? | Notes |
 |-------|--------|---|-------|-----------|-----------|----------------|-------|
-| P0 Discovery & foundations | 🔄 | 0% | | | | 🔲 | |
-| P1 Architecture & UX | 🔲 | 0% | | | | 🔲 | |
-| P2 Platform foundation | 🔲 | 0% | | | | 🔲 | |
-| P3 Catalog & browse | 🔲 | 0% | | | | 🔲 | |
-| P4 Ordering & payments | 🔲 | 0% | | | | 🔲 | |
-| P5 Ops, notifications, admin | 🔲 | 0% | | | | 🔲 | |
-| P6 Hardening & QA | 🔲 | 0% | | | | 🔲 | |
-| P7 UAT & launch prep | 🔲 | 0% | | | | 🔲 | |
-| P8 Go-live & hypercare | 🔲 | 0% | | | | 🔲 | |
-| P9 Post-MVP backlog | 🔲 | 0% | | | | — | |
+| P0 Discovery & foundations | 🔄 | 10% | 2026-07-13 | 2026-07-26 | | 🔲 | See DAILY_TASK_PLAN W1–W2 |
+| P1 Architecture & UX | 🔲 | 0% | 2026-07-27 | 2026-08-09 | | 🔲 | |
+| P2 Platform foundation | 🔲 | 0% | 2026-08-10 | 2026-08-30 | | 🔲 | |
+| P3 Catalog & browse | 🔲 | 0% | 2026-08-31 | 2026-09-13 | | 🔲 | |
+| P4 Ordering & payments | 🔲 | 0% | 2026-09-14 | 2026-10-11 | | 🔲 | |
+| P5 Ops, notifications, admin | 🔲 | 0% | 2026-10-12 | 2026-11-01 | | 🔲 | |
+| P6 Hardening & QA | 🔲 | 0% | 2026-11-02 | 2026-11-15 | | 🔲 | |
+| P7 UAT & launch prep | 🔲 | 0% | 2026-11-16 | 2026-11-29 | | 🔲 | |
+| P8 Go-live & hypercare | 🔲 | 0% | 2026-11-30 | 2026-12-13 | | 🔲 | Go-live 30 Nov |
+| P9 Post-MVP backlog | 🔲 | 0% | 2026-12-14 | — | | — | |
 
 ### 7.3 Milestone Tracker
 
 | Milestone | Owner | Target | Status | Done date |
 |-----------|-------|--------|--------|-----------|
-| Requirements sign-off | Sarthak | | 🔲 | |
-| All P0 decisions closed | Somnath | | 🔲 | |
-| Master data pack received | Sarthak | | 🔲 | |
-| Architecture + wireframes approved | Somnath | | 🔲 | |
-| Auth + infra live (Staging) | Somnath | | 🔲 | |
-| Browse app demo | Somnath | | 🔲 | |
-| End-to-end order+payment demo | Somnath | | 🔲 | |
-| Admin/ops + notifications complete | Somnath | | 🔲 | |
-| Security + load test passed | Somnath | | 🔲 | |
-| UAT sign-off | Sarthak | | 🔲 | |
-| Store approvals | Somnath | | 🔲 | |
-| Go-live | Somnath | | 🔲 | |
+| Requirements sign-off | Sarthak | 2026-07-19 | 🔲 | |
+| All P0 decisions closed | Somnath | 2026-07-14 | 🔲 | |
+| Master data pack received | Sarthak | 2026-07-19 | 🔲 | |
+| Architecture + wireframes approved | Both | 2026-07-25 | 🔲 | |
+| Auth + infra live (Staging) | Somnath | 2026-08-09 | 🔲 | |
+| Browse app demo | Somnath | 2026-08-30 | 🔲 | |
+| End-to-end order+payment demo | Somnath | 2026-09-27 | 🔲 | |
+| Admin/ops + notifications complete | Somnath | 2026-10-25 | 🔲 | |
+| Security + load test passed | Somnath | 2026-11-08 | 🔲 | |
+| UAT sign-off | Sarthak | 2026-11-21 | 🔲 | |
+| Store approvals | Somnath | 2026-11-29 | 🔲 | |
+| Go-live | Both | 2026-11-30 | 🔲 | |
 
 ### 7.4 Decision Closure Tracker
 
@@ -363,8 +369,8 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 | Week | Date | Phase | Done this week | Planned next week | Blockers |
 |------|------|-------|----------------|-------------------|----------|
-| W1 | | P0 | | | |
-| W2 | | | | | |
+| W1 | 2026-07-13 | P0 | Skills created; docs ready; git local commit | Sign-off, data collection, decisions | GitHub push pending; no master data yet |
+| W2 | 2026-07-20 | P0/P1 | | Architecture, ERD, wireframes | |
 
 ---
 
@@ -415,4 +421,5 @@ _R=Responsible, A=Accountable, C=Consulted, I=Informed._
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 0.2 | 2026-07-13 | Somnath Das | Tracker dates added; linked DAILY_TASK_PLAN.md and DOCUMENT_GUIDE.md |
 | 0.1 | _YYYY-MM-DD_ | Somnath Das | Initial plan, decision register, data task list & progress tracker created from REQUIREMENTS.md review |
