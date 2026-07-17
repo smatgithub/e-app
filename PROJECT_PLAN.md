@@ -396,12 +396,12 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | Field              | Value                                    |
 | ------------------ | ---------------------------------------- |
 | Reporting date     | 2026-07-17                               |
-| Current phase      | Phase 2 — v0 Lean development            |
-| Overall status     | 🔄 In progress                           |
-| Overall % complete | ~15%                                     |
+| Current phase      | Soft launch candidate (v1.0)             |
+| Overall status     | 🔄 UAT / Azure gate                      |
+| Overall % complete | ~72%                                     |
 | Schedule health    | 🟢                                       |
-| Top risk right now | Master data; Docker Desktop local I/O    |
-| Next milestone     | v0 local runtime verified + OTP/JWT      |
+| Top risk right now | Docker Desktop flaky; Azure VM not yet   |
+| Next milestone     | Sarthak UAT sign-off → Staging VM        |
 
 
 
@@ -413,12 +413,12 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | ---------------------------- | ------ | --- | ----- | ---------- | ---------- | -------------- | ----- |
 | P0 Discovery & foundations   | 🔄     | 75% | 2026-07-13 | 2026-07-19 |            | 🔲             | Decisions locked; requirements sign-off + master data open |
 | P1 Architecture & UX         | ✅     | 100% | 2026-07-17 | 2026-07-25 | 2026-07-17 | ✅             | Architecture, ERD, OpenAPI and wireframes approved |
-| P2 Platform foundation       | 🔄     | 20% | 2026-07-17 | 2026-08-09 |            | 🔲             | v0 monorepo, Docker, DB migrations and catalog API scaffolded |
-| P3 Catalog & browse          | 🔲     | 0%  |       |            |            | 🔲             |       |
-| P4 Ordering & payments       | 🔲     | 0%  |       |            |            | 🔲             |       |
-| P5 Ops, notifications, admin | 🔲     | 0%  |       |            |            | 🔲             |       |
-| P6 Hardening & QA            | 🔲     | 0%  |       |            |            | 🔲             |       |
-| P7 UAT & launch prep         | 🔲     | 0%  |       |            |            | 🔲             |       |
+| P2 Platform foundation       | 🔄     | 85% | 2026-07-17 | 2026-08-09 |            | 🔲             | Soft-launch APIs; Azure VM pending |
+| P3 Catalog & browse          | ✅     | 95% | 2026-07-17 |            | 2026-07-17 | ✅             | Menu + detail + banners |
+| P4 Ordering & payments       | 🔄     | 80% | 2026-07-17 |            |            | 🔲             | COD complete; Razorpay deferred |
+| P5 Ops, notifications, admin | 🔄     | 75% | 2026-07-17 |            |            | 🔲             | Dashboard/ops; FCM send deferred |
+| P6 Hardening & QA            | 🔄     | 40% | 2026-07-17 |            |            | 🔲             | OTP rate limit; UAT script ready |
+| P7 UAT & launch prep         | 🔄     | 30% | 2026-07-17 |            |            | 🔲             | Soft-launch UAT checklist |
 | P8 Go-live & hypercare       | 🔲     | 0%  |       |            |            | 🔲             |       |
 | P9 Post-MVP backlog          | 🔲     | 0%  |       |            |            | —              |       |
 
@@ -435,9 +435,11 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | Master data pack received          | Sarthak |        | 🔲     |           |
 | Architecture + wireframes approved | Somnath | 2026-07-25 | ✅     | 2026-07-17 |
 | OpenAPI + monorepo scaffold         | Somnath | 2026-07-25 | ✅     | 2026-07-17 |
-| v0 Docker + PostgreSQL scaffold     | Somnath | 2026-07-26 | 🔄     |            |
+| v0 Docker + PostgreSQL scaffold     | Somnath | 2026-07-26 | ✅     | 2026-07-17 |
+| Auth JWT + OTP stub + COD order API | Somnath | 2026-07-26 | ✅     | 2026-07-17 |
+| Admin queue + mobile checkout UI    | Somnath | 2026-07-26 | ✅     | 2026-07-17 |
 | Auth + infra live (Staging)        | Somnath |        | 🔲     |           |
-| Browse app demo                    | Somnath |        | 🔲     |           |
+| Browse app demo                    | Somnath |        | 🔄     |           |
 | End-to-end order+payment demo      | Somnath |        | 🔲     |           |
 | Admin/ops + notifications complete | Somnath |        | 🔲     |           |
 | Security + load test passed        | Somnath |        | 🔲     |           |
@@ -480,7 +482,7 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 | Week | Date | Phase | Done this week | Planned next week | Blockers |
 | ---- | ---- | ----- | -------------- | ----------------- | -------- |
-| W1   | 2026-07-17 | P0–P2 | D1–D18 locked; architecture/wireframes approved; ERD/OpenAPI; monorepo; Lean Stage A budget approved; Docker/Postgres v0 scaffold; platform config guides | Verify Compose runtime; implement real OTP/JWT; start cart + COD order flow; collect master data | Docker Desktop local image-store I/O; requirements sign-off and master data pending |
+| W1   | 2026-07-17 | P0–P2 | D1–D18 locked; architecture/wireframes; OpenAPI/monorepo; Stage A budget; Docker runtime verified; JWT+OTP stub; cart+COD order+admin APIs | Wire mobile browse + admin queue UI; Azure VM prep; master data chase | Requirements sign-off + master data pending |
 | W2   | 2026-07-24 | P2 |                |                   |          |
 
 
@@ -532,10 +534,11 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 1. ✅ Architecture/wireframes approved; D1–D18 locked; OpenAPI + monorepo complete.
 2. ✅ Stage A approved: ₹2–4k/month, COD-only, Android-first, paid services deferred.
-3. Resolve Docker Desktop image-store I/O and verify API + PostgreSQL Compose smoke tests.
-4. Implement real OTP/JWT, then cart + COD order flow.
-5. Chase Sarthak **master data** + formal requirements sign-off §15.3.
-6. Prepare Azure VM deployment + nightly PostgreSQL backup runbook.
+3. ✅ Docker Compose verified; JWT + OTP stub; cart + COD order + admin queue APIs live.
+4. ✅ Admin order queue UI + mobile browse/checkout UI wired to live API.
+5. Chase Sarthak **UAT** via `docs/uat/SOFT_LAUNCH_UAT.md` + formal requirements sign-off.
+6. When Docker is healthy: rebuild API image (`npm run docker:up`) so port 4000 matches v1.0.
+7. Azure VM apply per `docs/runbooks/soft-launch.md` when ready (no APK until Release track).
 
 ---
 
@@ -549,3 +552,9 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | 0.1     | *YYYY-MM-DD* | Somnath Das | Initial plan, decision register, data task list & progress tracker created from REQUIREMENTS.md review |
 | 0.2     | 2026-07-17   | Somnath Das | Arch/WF approved; D1–D18 locked; OpenAPI + monorepo scaffold; tracker updated                          |
 | 0.3     | 2026-07-17   | Somnath Das | Stage A approved; v0 development started; P1 closed and P2 tracker activated                           |
+| 0.4     | 2026-07-17   | Somnath Das | P2 advanced: JWT/OTP stub, cart+COD orders, admin queue APIs; Docker runtime verified                  |
+| 0.5     | 2026-07-17   | Somnath Das | P3 lean: admin order queue UI + mobile Home/cart/COD checkout against live API                         |
+| 0.6     | 2026-07-17   | Somnath Das | Catalog expand: 5 categories / 12+ products; admin product CRUD; mobile category chips + search         |
+| 0.7     | 2026-07-17   | Somnath Das | Seeded Kolkata menu (Mughlai/Bengali/Indo-Chinese/Continental/Desserts) with mid-band INR prices       |
+| 0.8     | 2026-07-17   | Somnath Das | Versioned FEATURES backlog; v0.1 customer tabs (detail/orders/profile/pickup); no APK until release track |
+| 0.9     | 2026-07-17   | Somnath Das | Soft-launch push v1.0: admin ops/dashboard/coupons, mobile reorder/coupon/banners, UAT+runbooks         |

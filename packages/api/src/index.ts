@@ -5,9 +5,15 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { v4 as uuidv4 } from 'uuid';
 import { runMigrations } from './db/migrate';
+import { adminCatalogRouter } from './modules/admin/admin.catalog.routes';
+import { adminOpsRouter } from './modules/admin/admin.ops.routes';
 import { authRouter } from './modules/auth/auth.routes';
+import { cartRouter } from './modules/cart/cart.routes';
 import { catalogRouter } from './modules/catalog/catalog.routes';
 import { healthRouter } from './modules/health/health.routes';
+import { marketingRouter } from './modules/marketing/marketing.routes';
+import { adminOrdersRouter, ordersRouter } from './modules/orders/orders.routes';
+import { profileRouter } from './modules/profile/profile.routes';
 
 async function main() {
   await runMigrations();
@@ -35,6 +41,13 @@ async function main() {
   app.use('/api/v1', healthRouter);
   app.use('/api/v1/auth', authRouter);
   app.use('/api/v1', catalogRouter);
+  app.use('/api/v1/cart', cartRouter);
+  app.use('/api/v1/orders', ordersRouter);
+  app.use('/api/v1', profileRouter);
+  app.use('/api/v1/admin/orders', adminOrdersRouter);
+  app.use('/api/v1/admin', adminCatalogRouter);
+  app.use('/api/v1/admin', adminOpsRouter);
+  app.use('/api/v1', marketingRouter);
 
   app.use(
     (

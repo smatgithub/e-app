@@ -35,6 +35,13 @@ catalogRouter.get('/categories', async (_req, res, next) => {
 catalogRouter.get('/products', async (req, res, next) => {
   try {
     const branchId = typeof req.query.branchId === 'string' ? req.query.branchId : null;
+    const categoryId =
+      typeof req.query.categoryId === 'string' ? req.query.categoryId : null;
+    const q =
+      typeof req.query.q === 'string' && req.query.q.trim()
+        ? `%${req.query.q.trim()}%`
+        : null;
+
     const { rows } = await pool.query(
       `SELECT
          p.id,
@@ -42,18 +49,22 @@ catalogRouter.get('/products', async (req, res, next) => {
          p.name,
          p.description,
          p.category_id AS "categoryId",
+         c.name AS "categoryName",
          p.price::float8 AS price,
          p.min_qty AS "minQty",
          p.image_url AS "imageUrl",
          COALESCE(i.is_available, p.is_active) AS "isAvailable",
          i.available_qty AS "availableQty"
        FROM products p
+       LEFT JOIN categories c ON c.id = p.category_id
        LEFT JOIN inventory i
          ON i.product_id = p.id
         AND ($1::uuid IS NULL OR i.branch_id = $1::uuid)
        WHERE p.is_active = TRUE
-       ORDER BY p.name`,
-      [branchId],
+         AND ($2::uuid IS NULL OR p.category_id = $2::uuid)
+         AND ($3::text IS NULL OR p.name ILIKE $3 OR p.description ILIKE $3 OR p.sku ILIKE $3)
+       ORDER BY c.sort_order NULLS LAST, p.name`,
+      [branchId, categoryId, q],
     );
     res.json(
       ok(rows, {
@@ -78,12 +89,14 @@ catalogRouter.get('/products/:productId', async (req, res, next) => {
          p.name,
          p.description,
          p.category_id AS "categoryId",
+         c.name AS "categoryName",
          p.price::float8 AS price,
          p.min_qty AS "minQty",
          p.image_url AS "imageUrl",
          COALESCE(i.is_available, p.is_active) AS "isAvailable",
          i.available_qty AS "availableQty"
        FROM products p
+       LEFT JOIN categories c ON c.id = p.category_id
        LEFT JOIN inventory i
          ON i.product_id = p.id
         AND ($2::uuid IS NULL OR i.branch_id = $2::uuid)

@@ -23,7 +23,10 @@ B2C local food ordering platform — mobile app, web admin, and API.
 | [docs/APPROVAL_CHECKLIST.md](docs/APPROVAL_CHECKLIST.md) | Architecture + UX sign-off sheet | Review meeting |
 | [docs/openapi.yaml](docs/openapi.yaml) | MVP API contract (source of truth) | Before endpoint changes |
 | [docs/MONOREPO.md](docs/MONOREPO.md) | How to run mobile / admin / API | Daily build |
-| [docs/azure-docker-cost.md](docs/azure-docker-cost.md) | **Lean** Azure+Docker cost (₹2–4k launch) | Budget / infra |
+| [docs/FEATURES.md](docs/FEATURES.md) | **Versioned feature backlog** (through soft launch v1.0) | Each version |
+| [docs/VERSION_1.0.md](docs/VERSION_1.0.md) | Soft launch candidate notes | Active version |
+| [docs/uat/SOFT_LAUNCH_UAT.md](docs/uat/SOFT_LAUNCH_UAT.md) | Sarthak UAT checklist | Before soft launch |
+| [docs/runbooks/soft-launch.md](docs/runbooks/soft-launch.md) | Soft launch ops runbook | Launch |
 
 ## Quick start — v0 (Docker Lean)
 
@@ -35,7 +38,7 @@ npm run docker:up          # API :4000 + Postgres
 curl -s http://localhost:4000/api/v1/health
 ```
 
-Platform setup guides: **[docs/config/README.md](docs/config/README.md)** · Version notes: **[docs/VERSION_0.md](docs/VERSION_0.md)**
+Platform setup guides: **[docs/config/README.md](docs/config/README.md)** · Features: **[docs/FEATURES.md](docs/FEATURES.md)** · Current: **[docs/VERSION_0.1.md](docs/VERSION_0.1.md)**
 
 ```bash
 npm run dev:admin    # :5173
@@ -68,4 +71,4 @@ Read PROJECT_PLAN.md and DAILY_TASK_PLAN.md. Current phase: P0.
 
 ## Status
 
-Phase 1 nearly complete — decisions locked, OpenAPI + monorepo scaffolded. Next: Phase 2 (Postgres, real OTP/JWT, Staging).
+Phase 2/3 lean — auth + COD APIs live; admin order queue + mobile browse/checkout UI wired.

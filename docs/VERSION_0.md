@@ -1,37 +1,40 @@
-# e-Food Center — Version 0.0.1 (v0)
+# e-Food Center — Version 0.0.x (closed)
 
-> **Started:** 2026-07-17  
-> **Mode:** Lean Launch (Stage A)  
+> **Closed:** 2026-07-17
+> **Mode:** Lean Launch (Stage A) foundation
 > **Approvals:** COD-only · ₹2–4k/mo · Android-first · defer Maps/Redis/managed DB/CDN
 
-## Goal of v0
+## Goal (met)
 
-Runnable foundation:
+End-to-end lean path on laptop:
 
-- Docker Compose: API + PostgreSQL  
-- DB migrations + seed menu  
-- Health + catalog from real DB  
-- Config guides for all platforms  
+- Docker API + PostgreSQL
+- OTP stub + JWT
+- Cart + COD order APIs
+- Admin order queue + product CRUD UI
+- Mobile browse + checkout smoke UI
+- Kolkata menu seed
+- One-off device APK smoke (cleartext LAN)
 
-## In scope (v0)
+## Checklist
 
-- [x] Compose + Dockerfile  
-- [x] Schema + seed  
-- [x] `/health`, `/branches`, `/categories`, `/products`  
-- [ ] Cart / orders / COD (next)  
-- [ ] OTP stub → MSG91  
-- [ ] Admin list from API  
-- [ ] Mobile home from API  
+- [x] Compose + Dockerfile
+- [x] Schema + seed (incl. Kolkata menu)
+- [x] Catalog APIs
+- [x] OTP stub + JWT
+- [x] Cart / COD orders / admin status API
+- [x] Admin order queue + products UI
+- [x] Mobile Home + cart + OTP checkout
+- [x] APK smoke (R0) — **no further APKs until Release track**
 
-## How to run v0
+## Next
+
+→ **[VERSION_0.1.md](./VERSION_0.1.md)** · Full backlog: **[FEATURES.md](./FEATURES.md)**
+
+## How to run
 
 ```bash
-cp .env.example .env
-npm install
-npm run build:shared
 npm run docker:up
-curl -s http://localhost:4000/api/v1/health
-curl -s http://localhost:4000/api/v1/products
+VITE_API_BASE=http://localhost:4000/api/v1 npm run dev:admin
+EXPO_PUBLIC_API_BASE=http://localhost:4000/api/v1 npm run dev:mobile
 ```
-
-Config guides: `docs/config/README.md`

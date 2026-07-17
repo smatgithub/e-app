@@ -1,25 +1,47 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "e-Food Center",
+    "slug": "e-food-center",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFF8F3"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.efoodcenter.app"
     },
     "android": {
+      "package": "com.efoodcenter.app",
+      "versionCode": 3,
+      "usesCleartextTraffic": true,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FFF8F3",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false
     },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "apiBase": "http://192.168.29.168:4001/api/v1"
     }
   }
 }

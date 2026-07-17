@@ -32,11 +32,7 @@
 
 ---
 
-
-
 ## 1. Executive Summary
-
-
 
 ### 1.1 Business Overview
 
@@ -50,8 +46,6 @@
 | Website / existing systems        |               |
 | Primary contact person            |               |
 | will help t Contact email / phone |               |
-
-
 
 
 ### 1.2 Problem Statement
@@ -71,8 +65,6 @@
 | Successful delivery | 1st 100 | DB secord          |
 
 
-
-
 ### 1.5 Reference Apps / Competitors
 
 
@@ -83,27 +75,19 @@
 
 ---
 
-
-
 ## 2. Scope
-
-
 
 ### 2.1 In Scope
 
 - [x] 
 
-- Application uptime, security, speed, scalability. 
-
-
+- Application uptime, security, speed, scalability.
 
 ### 2.2 Out of Scope
 
 - [ ] 
 
 - Not defined yet.
-
-
 
 ### 2.3 Assumptions
 
@@ -113,16 +97,12 @@
 | 1   | Adding more business verticles in it | Somnath |             |
 
 
-
-
 ### 2.4 Dependencies
 
 
 | #   | Dependency | Owner | Status                       |
 | --- | ---------- | ----- | ---------------------------- |
 | 1   |            |       | Pending / In progress / Done |
-
-
 
 
 ### 2.5 Risks & Open Questions
@@ -135,11 +115,7 @@
 
 ---
 
-
-
 ## 3. Users & Roles
-
-
 
 ### 3.1 User Types
 
@@ -151,8 +127,6 @@
 | Manager          | take care the order frequency and price and delivery decission |                            |                       |
 | Admin            | control platform and easiness, marketing and campaign          |                            |                       |
 | Vendor / Partner |                                                                |                            |                       |
-
-
 
 
 ### 3.2 Role–Permission Matrix
@@ -168,8 +142,6 @@
 | Manage users          | no       | no    | no      | yes   |
 
 
-
-
 ### 3.3 Multi-Branch / Franchise
 
 
@@ -183,13 +155,9 @@
 
 ---
 
-
-
 ## 4. Functional Requirements
 
 > Mark each item: **MVP** | **Phase 2** | **Not needed**
-
-
 
 ### 4.1 Authentication & Onboarding
 
@@ -212,8 +180,6 @@
 - 
 
 ---
-
-
 
 ### 4.2 Catalog / Content
 
@@ -245,8 +211,6 @@
 
 
 ---
-
-
 
 ### 4.3 Cart / Booking / Inquiry
 
@@ -285,8 +249,6 @@
 
 ---
 
-
-
 ### 4.4 Payments
 
 
@@ -309,8 +271,6 @@
 
 
 ---
-
-
 
 ### 4.5 Notifications & Communication
 
@@ -338,8 +298,6 @@
 
 ---
 
-
-
 ### 4.6 Admin & Operations
 
 
@@ -366,8 +324,6 @@
 
 ---
 
-
-
 ### 4.7 Loyalty & Marketing (Optional)
 
 
@@ -381,11 +337,7 @@
 
 ---
 
-
-
 ## 5. User Stories
-
-
 
 ### Format
 
@@ -397,8 +349,6 @@
 | US-01 | As a customer, I want to browse products, so that I can find what I need quickly. | Must     | List loads in < 3s; search returns relevant results | Pending |
 | US-02 |                                                                                   |          |                                                     |         |
 | US-03 |                                                                                   |          |                                                     |         |
-
-
 
 
 ### MoSCoW Priority
@@ -414,30 +364,24 @@
 
 ---
 
-
-
 ## 6. Screen Inventory
 
 
-| #   | Screen name         | User role | Key actions      | Linked requirements | Wireframe ref |
-| --- | ------------------- | --------- | ---------------- | ------------------- | ------------- |
+| #   | Screen name         | User role | Key actions      | Linked requirements | Wireframe ref                             |
+| --- | ------------------- | --------- | ---------------- | ------------------- | ----------------------------------------- |
 | 1   | Splash / Onboarding | All       | View intro, skip |                     | `docs/wireframes/01-splash-onboarding.md` |
-| 2   | Login / Register    | All       | OTP, sign in     | FR-AUTH-01          | `docs/wireframes/02-login-otp.md` |
-| 3   | Home                | Customer  | Browse, search   | FR-CAT-01           | `docs/wireframes/03-home.md` |
-| 4   | Product detail      | Customer  | Add to cart      | FR-CAT-04           | `docs/wireframes/04-product-detail.md` |
-| 5   | Cart / Checkout     | Customer  | Pay, confirm     | FR-ORD-01           | `docs/wireframes/05-cart-checkout.md` |
-| 6   | Order history       | Customer  | Track, reorder   | FR-ORD-06           | `docs/wireframes/06-order-history.md` |
-| 7   | Profile             | Customer  | Edit details     | FR-AUTH-05          | `docs/wireframes/07-profile.md` |
-| 8   | Admin dashboard     | Admin     | Manage ops       | FR-ADM-01           | `docs/wireframes/08-admin-dashboard.md` |
+| 2   | Login / Register    | All       | OTP, sign in     | FR-AUTH-01          | `docs/wireframes/02-login-otp.md`         |
+| 3   | Home                | Customer  | Browse, search   | FR-CAT-01           | `docs/wireframes/03-home.md`              |
+| 4   | Product detail      | Customer  | Add to cart      | FR-CAT-04           | `docs/wireframes/04-product-detail.md`    |
+| 5   | Cart / Checkout     | Customer  | Pay, confirm     | FR-ORD-01           | `docs/wireframes/05-cart-checkout.md`     |
+| 6   | Order history       | Customer  | Track, reorder   | FR-ORD-06           | `docs/wireframes/06-order-history.md`     |
+| 7   | Profile             | Customer  | Edit details     | FR-AUTH-05          | `docs/wireframes/07-profile.md`           |
+| 8   | Admin dashboard     | Admin     | Manage ops       | FR-ADM-01           | `docs/wireframes/08-admin-dashboard.md`   |
 
 
 ---
 
-
-
 ## 7. Workflows
-
-
 
 ### 7.1 Customer Journey (Happy Path)
 
@@ -453,8 +397,6 @@
 9. Complete / rate (optional)
 ```
 
-
-
 ### 7.2 Order Fulfillment Workflow
 
 
@@ -465,8 +407,6 @@
 | 3    | Prepared / dispatched | Staff          | 1 min |                     |
 | 4    | Delivered / completed | Staff          | 1 min | Push + SMS          |
 | 5    | Closed                | System         |       |                     |
-
-
 
 
 ### 7.3 Exception Flows
@@ -482,15 +422,9 @@
 
 ---
 
-
-
 ## 8. Data Dictionary
 
-
-
 ### 8.1 Core Entities
-
-
 
 #### User
 
@@ -503,8 +437,6 @@
 | email      | string   | No       |                              |
 | role       | enum     | Yes      | customer / staff / admin     |
 | created_at | datetime | Yes      | add createed by too for data |
-
-
 
 
 #### Product / Service
@@ -520,8 +452,6 @@
 | tax_percent | decimal | Yes      |                   |
 | images      | array   | Yes      | Min 1             |
 | status      | enum    | Yes      | active / inactive |
-
-
 
 
 #### Order / Booking
@@ -540,8 +470,6 @@
 *Add more entities as discovery progresses.*
 
 ---
-
-
 
 ## 9. Master Data to Collect from Business
 
@@ -568,8 +496,6 @@
 
 ---
 
-
-
 ## 10. Integrations
 
 
@@ -585,8 +511,6 @@
 
 
 ---
-
-
 
 ## 11. Non-Functional Requirements
 
@@ -609,8 +533,6 @@
 
 ---
 
-
-
 ## 12. Security & Compliance
 
 
@@ -630,8 +552,6 @@
 
 ---
 
-
-
 ## 13. Technical Decisions
 
 
@@ -648,11 +568,7 @@
 
 ---
 
-
-
 ## 14. Commercial & Delivery
-
-
 
 ### 14.1 Timeline
 
@@ -667,8 +583,6 @@
 | Go-live                  | 19-07-2026  |        |
 
 
-
-
 ### 14.2 Budget (Lean Launch — see `docs/azure-docker-cost.md`)
 
 > **Startup hosting:** One Azure VM + Docker Compose (India); admin on Static Web Apps Free.
@@ -676,25 +590,23 @@
 > Owner of cloud bills: **Somnath**.
 
 
-| Item | Estimated cost | Type | Owner pays |
-| ---- | -------------- | ---- | ---------- |
-| Development (fixed / T&M) | Per agreement | One-time / phase | Business / Somnath |
-| **Cloud — Stage A Lean Launch** | **₹2,000 – 4,000 / mo** | Recurring | Somnath |
-| Cloud — Stage B Stabilize | **₹4,000 – 8,000 / mo** | Recurring | Somnath |
-| Cloud — Stage C Scale (later) | ₹15,000+ / mo | Recurring when needed | Somnath |
-| SMS OTP (MSG91) — light | **₹0 – 500 / mo** early | Variable | Somnath |
-| Maps / Redis / CDN / managed DB | **₹0 at launch** (deferred) | — | — |
-| Payment gateway | **₹0 monthly**; Razorpay ~1.5–2% only if/when UPI enabled | Variable | Via gateway |
-| Google Play | **$25 one-time** | One-time | Somnath |
-| Apple Developer | **~$99 / yr** — **defer if Android-first** | Annual | Somnath |
-| Domain + DNS | **₹800 – 2,000 / yr** | Annual | Somnath |
-| **Stakeholder ask for launch** | **≈ ₹2,000 – 4,000 / mo** | Recurring | Somnath |
-| AMC / support (annual) | TBD after go-live | Annual | Business |
+| Item                            | Estimated cost                                            | Type                  | Owner pays         |
+| ------------------------------- | --------------------------------------------------------- | --------------------- | ------------------ |
+| Development (fixed / T&M)       | Per agreement                                             | One-time / phase      | Business / Somnath |
+| **Cloud — Stage A Lean Launch** | **₹2,000 – 4,000 / mo**                                   | Recurring             | Somnath            |
+| Cloud — Stage B Stabilize       | **₹4,000 – 8,000 / mo**                                   | Recurring             | Somnath            |
+| Cloud — Stage C Scale (later)   | ₹15,000+ / mo                                             | Recurring when needed | Somnath            |
+| SMS OTP (MSG91) — light         | **₹0 – 500 / mo** early                                   | Variable              | Somnath            |
+| Maps / Redis / CDN / managed DB | **₹0 at launch** (deferred)                               | —                     | —                  |
+| Payment gateway                 | **₹0 monthly**; Razorpay ~1.5–2% only if/when UPI enabled | Variable              | Via gateway        |
+| Google Play                     | **$25 one-time**                                          | One-time              | Somnath            |
+| Apple Developer                 | **~$99 / yr** — **defer if Android-first**                | Annual                | Somnath            |
+| Domain + DNS                    | **₹800 – 2,000 / yr**                                     | Annual                | Somnath            |
+| **Stakeholder ask for launch**  | **≈ ₹2,000 – 4,000 / mo**                                 | Recurring             | Somnath            |
+| AMC / support (annual)          | TBD after go-live                                         | Annual                | Business           |
+
 
 **Budget alert (Lean):** Review if infra exceeds **₹5,000 / month** before Stage B approval.
-
-
-
 
 ### 14.3 Payment Schedule
 
@@ -704,8 +616,6 @@
 | Kickoff      | 30% | Requirements sign-off |
 | MVP delivery | 40% | UAT start             |
 | Go-live      | 30% | Production release    |
-
-
 
 
 ### 14.4 Support & Warranty
@@ -721,11 +631,7 @@
 
 ---
 
-
-
 ## 15. UAT & Acceptance
-
-
 
 ### 15.1 UAT Owner (Business Side)
 
@@ -733,8 +639,6 @@
 | Name    | Role | Contact |
 | ------- | ---- | ------- |
 | Sarthak |      |         |
-
-
 
 
 ### 15.2 MVP Acceptance Checklist
@@ -749,8 +653,6 @@
 | 5   |                                    |                                    |             |        |      |
 
 
-
-
 ### 15.3 Sign-Off
 
 
@@ -763,11 +665,7 @@
 
 ---
 
-
-
 ## 16. Discovery Workshop Notes
-
-
 
 ### Session 1 — Business & Users
 
@@ -787,8 +685,6 @@
 
 ---
 
-
-
 ### Session 2 — Features & Workflows
 
 **Date:**  
@@ -807,8 +703,6 @@
 
 ---
 
-
-
 ### Session 3 — Data, Integrations & Commercial
 
 **Date:**  
@@ -826,8 +720,6 @@
 
 
 ---
-
-
 
 ## 17. Pre-Development Gate Checklist
 
@@ -848,8 +740,6 @@
 
 ---
 
-
-
 ## Appendix A — First Questions for Business Owner
 
 1. Who is the primary user, and what is the #1 action they must complete? Ans: all regular users, and they will do sign in (if not yet) and get the prod list and detsils.
@@ -864,8 +754,6 @@
 10. What does success look like in 90 days? Ans: 9000 successful orders delivered succssfully with no complain.
 
 ---
-
-
 
 ## Appendix B — Glossary
 
