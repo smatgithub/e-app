@@ -419,16 +419,16 @@
 ## 6. Screen Inventory
 
 
-| #   | Screen name         | User role | Key actions      | Linked requirements | Wireframe ref                |
-| --- | ------------------- | --------- | ---------------- | ------------------- | ---------------------------- |
-| 1   | Splash / Onboarding | All       | View intro, skip |                     | Need to decide and finalize. |
-| 2   | Login / Register    | All       | OTP, sign in     | FR-AUTH-01          | Need to decide and finalize. |
-| 3   | Home                | Customer  | Browse, search   | FR-CAT-01           | Need to decide and finalize. |
-| 4   | Product detail      | Customer  | Add to cart      | FR-CAT-04           | Need to decide and finalize. |
-| 5   | Cart / Checkout     | Customer  | Pay, confirm     | FR-ORD-01           | Need to decide and finalize. |
-| 6   | Order history       | Customer  | Track, reorder   | FR-ORD-06           | Need to decide and finalize. |
-| 7   | Profile             | Customer  | Edit details     | FR-AUTH-05          | Need to decide and finalize. |
-| 8   | Admin dashboard     | Admin     | Manage ops       | FR-ADM-01           | Need to decide and finalize. |
+| #   | Screen name         | User role | Key actions      | Linked requirements | Wireframe ref |
+| --- | ------------------- | --------- | ---------------- | ------------------- | ------------- |
+| 1   | Splash / Onboarding | All       | View intro, skip |                     | `docs/wireframes/01-splash-onboarding.md` |
+| 2   | Login / Register    | All       | OTP, sign in     | FR-AUTH-01          | `docs/wireframes/02-login-otp.md` |
+| 3   | Home                | Customer  | Browse, search   | FR-CAT-01           | `docs/wireframes/03-home.md` |
+| 4   | Product detail      | Customer  | Add to cart      | FR-CAT-04           | `docs/wireframes/04-product-detail.md` |
+| 5   | Cart / Checkout     | Customer  | Pay, confirm     | FR-ORD-01           | `docs/wireframes/05-cart-checkout.md` |
+| 6   | Order history       | Customer  | Track, reorder   | FR-ORD-06           | `docs/wireframes/06-order-history.md` |
+| 7   | Profile             | Customer  | Edit details     | FR-AUTH-05          | `docs/wireframes/07-profile.md` |
+| 8   | Admin dashboard     | Admin     | Manage ops       | FR-ADM-01           | `docs/wireframes/08-admin-dashboard.md` |
 
 
 ---
@@ -669,18 +669,29 @@
 
 
 
-### 14.2 Budget (Need to make a list of one time cost, recurring cost, variable cost and fixed cost)
+### 14.2 Budget (Lean Launch — see `docs/azure-docker-cost.md`)
+
+> **Startup hosting:** One Azure VM + Docker Compose (India); admin on Static Web Apps Free.
+> **Payments:** COD first (₹0 gateway). Razorpay later = % of online sales only (no monthly rent).
+> Owner of cloud bills: **Somnath**.
 
 
-| Item                       | Estimated cost | Owner pays |
-| -------------------------- | -------------- | ---------- |
-| Development (fixed / T&M)  |                |            |
-| Cloud hosting (monthly)    |                |            |
-| SMS / email (monthly)      |                |            |
-| Payment gateway fees       |                |            |
-| Apple Developer ($99/yr)   |                |            |
-| Google Play ($25 one-time) |                |            |
-| AMC / support (annual)     |                |            |
+| Item | Estimated cost | Type | Owner pays |
+| ---- | -------------- | ---- | ---------- |
+| Development (fixed / T&M) | Per agreement | One-time / phase | Business / Somnath |
+| **Cloud — Stage A Lean Launch** | **₹2,000 – 4,000 / mo** | Recurring | Somnath |
+| Cloud — Stage B Stabilize | **₹4,000 – 8,000 / mo** | Recurring | Somnath |
+| Cloud — Stage C Scale (later) | ₹15,000+ / mo | Recurring when needed | Somnath |
+| SMS OTP (MSG91) — light | **₹0 – 500 / mo** early | Variable | Somnath |
+| Maps / Redis / CDN / managed DB | **₹0 at launch** (deferred) | — | — |
+| Payment gateway | **₹0 monthly**; Razorpay ~1.5–2% only if/when UPI enabled | Variable | Via gateway |
+| Google Play | **$25 one-time** | One-time | Somnath |
+| Apple Developer | **~$99 / yr** — **defer if Android-first** | Annual | Somnath |
+| Domain + DNS | **₹800 – 2,000 / yr** | Annual | Somnath |
+| **Stakeholder ask for launch** | **≈ ₹2,000 – 4,000 / mo** | Recurring | Somnath |
+| AMC / support (annual) | TBD after go-live | Annual | Business |
+
+**Budget alert (Lean):** Review if infra exceeds **₹5,000 / month** before Stage B approval.
 
 
 

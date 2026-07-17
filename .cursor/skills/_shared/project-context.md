@@ -23,11 +23,11 @@ All efood-* skills MUST read this plus `REQUIREMENTS.md` and `PROJECT_PLAN.md` a
 | Web admin + customer web | React + Tailwind CSS |
 | Backend | Node.js (Express or NestJS) |
 | Database | PostgreSQL |
-| Cloud | Managed (AWS/Azure), India region |
-| Auth | Phone OTP (MSG91), JWT + refresh, MFA for admin |
-| Payments | Razorpay (UPI/card/wallet) + COD |
-| Push | Firebase Cloud Messaging |
-| Maps | Google Maps |
+| Cloud | Azure India — Lean: 1× VM + Docker Compose; Scale later: ACA + managed DB |
+| Auth | Phone OTP (MSG91, minimize), JWT + refresh; MFA for admin later |
+| Payments | COD first; Razorpay UPI when requested (no monthly fee) |
+| Push | Firebase Cloud Messaging (order status) |
+| Maps | Deferred at launch (text address / pincode zones) |
 
 ## Order lifecycle
 

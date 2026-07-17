@@ -1,0 +1,14 @@
+node_modules
+**/node_modules
+.git
+.expo
+dist
+**/dist
+apps
+*.md
+.env
+.env.*
+!.env.example
+coverage
+.cursor
+agent-transcripts

@@ -119,31 +119,41 @@ Applied to every phase and decision.
 
 
 
-## 4. Decision Register (Pending Decisions)
+## 4. Decision Register (Locked)
 
-> Update `Status` and `Decision`. Recommendations are provided to speed closure; confirm with owner where cost/ownership is involved.
+> **Locked on:** 2026-07-17 after Architecture + Wireframe approval.
+> Change only via ADR + owner sign-off. `Decision` column is the binding choice.
 
 
-| ID  | Decision needed             | Options                           | Recommendation (to validate)                                                                                   | Owner              | Needed by phase | Status |
-| --- | --------------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------ | --------------- | ------ |
-| D1  | Mobile approach             | Native / React Native / Flutter   | **React Native (Expo)** — one codebase iOS+Android, aligns with your React skill, fast MVP                     | Somnath            | P1              | 🔲     |
-| D2  | Backend stack               | Node.js / .NET / Python           | **Node.js + Express/NestJS** — matches your stack, strong ecosystem, easy hiring                               | Somnath            | P1              | 🔲     |
-| D3  | Database                    | PostgreSQL / MongoDB / SQL Server | **PostgreSQL** — relational integrity for orders/payments, JSONB for flexibility, cost-effective               | Somnath            | P1              | 🔲     |
-| D4  | Cloud/hosting               | AWS / Azure / GCP / others        | **AWS or Azure managed (App Runner/Container Apps + managed Postgres)**; pick on cost + your Azure familiarity | Somnath            | P1              | 🔲     |
-| D5  | Payment gateway             | Razorpay / Cashfree / Stripe      | **Razorpay** — India-first, UPI/cards/wallets, easy KYC, good docs                                             | Business + Somnath | P1              | 🔲     |
-| D6  | SMS/OTP provider            | MSG91 / Twilio / Gupshup          | **MSG91** (India, cost-effective, DLT-ready)                                                                   | Somnath            | P1              | 🔲     |
-| D7  | Email provider              | SES / SendGrid / Resend           | **Amazon SES** (cheap) or **Resend** (simple)                                                                  | Somnath            | P2              | 🔲     |
-| D8  | Push notifications          | FCM (+APNs)                       | **Firebase Cloud Messaging** (free, standard)                                                                  | Somnath            | P1              | 🔲     |
-| D9  | Maps/geocoding              | Google Maps / Mapbox              | **Google Maps** (coverage) — watch billing; Mapbox if cost-sensitive                                           | Somnath            | P1              | 🔲     |
-| D10 | Platforms & min OS          | iOS+Android; versions             | **Both**, Android 8+/iOS 14+                                                                                   | Somnath            | P0              | 🔲     |
-| D11 | Languages (MVP)             | English / +Bengali / +Hindi       | **English + local language** (customer base is less-educated)                                                  | Business           | P0              | 🔲     |
-| D12 | Guest browsing              | Yes/No; order w/o login           | **Browse as guest; login required at checkout**                                                                | Business           | P0              | 🔲     |
-| D13 | Delivery model & zones      | Own staff / pickup / radius / fee | Define zones + fee slabs; **pickup + own delivery**                                                            | Business           | P0              | 🔲     |
-| D14 | POS/printer for invoices    | Model & protocol                  | Confirm hardware; support thermal/ESC-POS                                                                      | Business           | P1              | 🔲     |
-| D15 | App store account ownership | Apple / Google owner              | **Owner = Somnath** (per Appendix A) — enroll accounts                                                         | Somnath            | P1              | 🔲     |
-| D16 | SLA/uptime target           | 99.5 / 99.9                       | **99.9%** stated, **99.5%** realistic for single-region MVP                                                    | Somnath            | P0              | 🔲     |
-| D17 | CI/CD & release cadence     | Weekly/monthly                    | **CI on every merge; scheduled releases weekly**                                                               | Somnath            | P1              | 🔲     |
-| D18 | Hosting region              | India region                      | **Yes, India region** (DPDP residency)                                                                         | Somnath            | P1              | 🔲     |
+| ID  | Decision needed             | Decision (LOCKED)                                                                 | Owner              | Needed by phase | Status | Locked date |
+| --- | --------------------------- | --------------------------------------------------------------------------------- | ------------------ | --------------- | ------ | ----------- |
+| D1  | Mobile approach             | **React Native (Expo)** — iOS + Android one codebase                              | Somnath            | P1              | ✅     | 2026-07-17  |
+| D2  | Backend stack               | **Node.js + Express** (TypeScript), modular monolith, REST `/api/v1`              | Somnath            | P1              | ✅     | 2026-07-17  |
+| D3  | Database                    | **PostgreSQL 15+**                                                                | Somnath            | P1              | ✅     | 2026-07-17  |
+| D4  | Cloud/hosting               | **Lean:** Azure India **1× VM + Docker Compose** (api+postgres); Static Web Apps Free for admin. **Scale later:** ACA + managed PG/Redis (ADR 002) | Somnath            | P1              | ✅     | 2026-07-17  |
+| D5  | Payment gateway             | **COD first (₹0)**; add **Razorpay UPI** when stakeholder asks (no monthly fee; % of GMV only) | Business + Somnath | P1              | ✅     | 2026-07-17  |
+| D6  | SMS/OTP provider            | **MSG91** pay-as-you-go; OTP on login only; order updates via **FCM** (not SMS) at launch | Somnath            | P1              | ✅     | 2026-07-17  |
+| D7  | Email provider              | **Amazon SES** (Phase 2+; not MVP blocker)                                        | Somnath            | P2              | ✅     | 2026-07-17  |
+| D8  | Push notifications          | **Firebase Cloud Messaging** (+ APNs via FCM)                                     | Somnath            | P1              | ✅     | 2026-07-17  |
+| D9  | Maps/geocoding              | **Deferred at launch** — text address + pincode/zone list; Google Maps when asked | Somnath            | P1              | ✅     | 2026-07-17  |
+| D10 | Platforms & min OS          | **Android first** (8+); **no iOS at launch**; iOS 14+ later when approved | Somnath            | P0              | ✅     | 2026-07-17  |
+| D11 | Languages (MVP)             | **English primary**; **Bengali** i18n-ready (strings toggle); Hindi later         | Business           | P0              | ✅     | 2026-07-17  |
+| D12 | Guest browsing              | **Browse as guest; login (OTP) required at checkout**                             | Business           | P0              | ✅     | 2026-07-17  |
+| D13 | Delivery model & zones      | **Own delivery + pickup**; zone fees in `delivery_zones` (slabs from Sarthak)     | Business           | P0              | ✅     | 2026-07-17  |
+| D14 | POS/printer for invoices    | **ESC-POS thermal** protocol; **specific printer model TBD** before Phase 4 print | Business           | P1              | ✅     | 2026-07-17  |
+| D15 | App store account ownership | **Somnath** owns Apple Developer + Google Play accounts                           | Somnath            | P1              | ✅     | 2026-07-17  |
+| D16 | SLA/uptime target           | **99.5%** MVP single-region; aspirational 99.9% post-hardening                    | Somnath            | P0              | ✅     | 2026-07-17  |
+| D17 | CI/CD & release cadence     | **CI on every merge**; **weekly** scheduled releases to Staging/Prod              | Somnath            | P1              | ✅     | 2026-07-17  |
+| D18 | Hosting region              | **India** (Azure India region) — DPDP data residency                              | Somnath            | P1              | ✅     | 2026-07-17  |
+
+**Follow-ups (do not reopen decisions):**
+
+| Item | Owner | Due |
+|------|-------|-----|
+| Delivery zone names + fee slabs (data for D13) | Sarthak | Before Phase 4 |
+| POS printer brand/model (data for D14) | Sarthak | Before Phase 4 invoice print |
+| Azure subscription + India region confirmed | Somnath | Phase 2 week 1 |
+| Razorpay KYC + MSG91 DLT templates | Both | Phase 2 |
 
 
 ---
@@ -385,13 +395,13 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 | Field              | Value                                    |
 | ------------------ | ---------------------------------------- |
-| Reporting date     | *YYYY-MM-DD*                             |
-| Current phase      | Phase 0                                  |
+| Reporting date     | 2026-07-17                               |
+| Current phase      | Phase 2 — v0 Lean development            |
 | Overall status     | 🔄 In progress                           |
-| Overall % complete | 0%                                       |
-| Schedule health    | 🟢 / 🟡 / 🔴                             |
-| Top risk right now | Timeline & undecided stack               |
-| Next milestone     | Requirements sign-off + decisions closed |
+| Overall % complete | ~15%                                     |
+| Schedule health    | 🟢                                       |
+| Top risk right now | Master data; Docker Desktop local I/O    |
+| Next milestone     | v0 local runtime verified + OTP/JWT      |
 
 
 
@@ -401,9 +411,9 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 | Phase                        | Status | %   | Start | Target end | Actual end | Exit gate met? | Notes |
 | ---------------------------- | ------ | --- | ----- | ---------- | ---------- | -------------- | ----- |
-| P0 Discovery & foundations   | 🔄     | 0%  |       |            |            | 🔲             |       |
-| P1 Architecture & UX         | 🔲     | 0%  |       |            |            | 🔲             |       |
-| P2 Platform foundation       | 🔲     | 0%  |       |            |            | 🔲             |       |
+| P0 Discovery & foundations   | 🔄     | 75% | 2026-07-13 | 2026-07-19 |            | 🔲             | Decisions locked; requirements sign-off + master data open |
+| P1 Architecture & UX         | ✅     | 100% | 2026-07-17 | 2026-07-25 | 2026-07-17 | ✅             | Architecture, ERD, OpenAPI and wireframes approved |
+| P2 Platform foundation       | 🔄     | 20% | 2026-07-17 | 2026-08-09 |            | 🔲             | v0 monorepo, Docker, DB migrations and catalog API scaffolded |
 | P3 Catalog & browse          | 🔲     | 0%  |       |            |            | 🔲             |       |
 | P4 Ordering & payments       | 🔲     | 0%  |       |            |            | 🔲             |       |
 | P5 Ops, notifications, admin | 🔲     | 0%  |       |            |            | 🔲             |       |
@@ -421,9 +431,11 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | Milestone                          | Owner   | Target | Status | Done date |
 | ---------------------------------- | ------- | ------ | ------ | --------- |
 | Requirements sign-off              | Sarthak |        | 🔲     |           |
-| All P0 decisions closed            | Somnath |        | 🔲     |           |
+| All P0 decisions closed            | Somnath | 2026-07-17 | ✅     | 2026-07-17 |
 | Master data pack received          | Sarthak |        | 🔲     |           |
-| Architecture + wireframes approved | Somnath |        | 🔲     |           |
+| Architecture + wireframes approved | Somnath | 2026-07-25 | ✅     | 2026-07-17 |
+| OpenAPI + monorepo scaffold         | Somnath | 2026-07-25 | ✅     | 2026-07-17 |
+| v0 Docker + PostgreSQL scaffold     | Somnath | 2026-07-26 | 🔄     |            |
 | Auth + infra live (Staging)        | Somnath |        | 🔲     |           |
 | Browse app demo                    | Somnath |        | 🔲     |           |
 | End-to-end order+payment demo      | Somnath |        | 🔲     |           |
@@ -442,9 +454,9 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | Metric                   | Count  |
 | ------------------------ | ------ |
 | Total decisions (D1–D18) | 18     |
-| Closed                   | 0      |
-| Open                     | 18     |
-| Blocking current phase   | *fill* |
+| Closed                   | 18     |
+| Open                     | 0      |
+| Blocking current phase   | None (data follow-ups only) |
 
 
 
@@ -468,8 +480,8 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 | Week | Date | Phase | Done this week | Planned next week | Blockers |
 | ---- | ---- | ----- | -------------- | ----------------- | -------- |
-| W1   |      | P0    |                |                   |          |
-| W2   |      |       |                |                   |          |
+| W1   | 2026-07-17 | P0–P2 | D1–D18 locked; architecture/wireframes approved; ERD/OpenAPI; monorepo; Lean Stage A budget approved; Docker/Postgres v0 scaffold; platform config guides | Verify Compose runtime; implement real OTP/JWT; start cart + COD order flow; collect master data | Docker Desktop local image-store I/O; requirements sign-off and master data pending |
+| W2   | 2026-07-24 | P2 |                |                   |          |
 
 
 ---
@@ -508,7 +520,7 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | R4  | Master data delays                           | High       | Med    | Chase list (Section 5); block gates                      | Sarthak | 🔲     |
 | R5  | Payment/PCI & DPDP compliance gaps           | Med        | High   | Hosted gateway, minimize scope, consent/retention design | Somnath | 🔲     |
 | R6  | COD reconciliation errors/leakage            | Med        | Med    | Delivery-person collection tracking + day-end report     | Somnath | 🔲     |
-| R7  | Cloud cost overrun (maps, SMS, egress)       | Med        | Med    | Budget model (Req §14.2), quotas, alerts                 | Somnath | 🔲     |
+| R7  | Cloud cost overrun (maps, SMS, egress)       | Low        | Med    | Stage A ₹2–4k approved; defer paid services; ₹5k alert   | Somnath | 🔄     |
 | R8  | Scope creep (verticals, franchise in MVP)    | Med        | Med    | Schema-ready but MVP = food only                         | Somnath | 🔲     |
 
 
@@ -518,12 +530,12 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 
 ## 10. Immediate Next Actions (This Week)
 
-1. Get owner agreement on **re-baselined timeline** (Section 6.9) — replaces the 6-day plan.
-2. Close **P0 decisions** D10, D11, D12, D13, D16 (needed by P0) and D1–D5.
-3. Send Sarthak the **data/info chase list** (Section 5) and set due dates.
-4. Fix `REQUIREMENTS.md` consistency items (C1–C8).
-5. Provision Git repo + CI skeleton + cloud account (P1, P9).
-6. Obtain **requirements sign-off** (Req §15.3) once §2 blockers cleared.
+1. ✅ Architecture/wireframes approved; D1–D18 locked; OpenAPI + monorepo complete.
+2. ✅ Stage A approved: ₹2–4k/month, COD-only, Android-first, paid services deferred.
+3. Resolve Docker Desktop image-store I/O and verify API + PostgreSQL Compose smoke tests.
+4. Implement real OTP/JWT, then cart + COD order flow.
+5. Chase Sarthak **master data** + formal requirements sign-off §15.3.
+6. Prepare Azure VM deployment + nightly PostgreSQL backup runbook.
 
 ---
 
@@ -535,3 +547,5 @@ Nine phases from discovery to scale. Each phase has objectives, key tasks, deliv
 | Version | Date         | Author      | Summary                                                                                                |
 | ------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------ |
 | 0.1     | *YYYY-MM-DD* | Somnath Das | Initial plan, decision register, data task list & progress tracker created from REQUIREMENTS.md review |
+| 0.2     | 2026-07-17   | Somnath Das | Arch/WF approved; D1–D18 locked; OpenAPI + monorepo scaffold; tracker updated                          |
+| 0.3     | 2026-07-17   | Somnath Das | Stage A approved; v0 development started; P1 closed and P2 tracker activated                           |

@@ -70,13 +70,15 @@
 
 | Date | Task | Who | Deliverable |
 |------|------|-----|-------------|
-| Mon 20 Jul | System architecture diagram | Somnath | `docs/architecture.md` |
-| Mon–Wed | ERD + OpenAPI spec for MVP | Somnath | `docs/erd.md`, `docs/openapi.yaml` |
+| Mon 20 Jul | System architecture diagram | Somnath | `docs/architecture.md` ✅ draft ready |
+| Mon–Wed | ERD + OpenAPI spec for MVP | Somnath | `docs/erd.md` ✅ · `docs/openapi.yaml` ✅ |
 | Thu 23 Jul | Sarthak: logo, app icon, T&C, privacy, refund policy | Sarthak | Brand + legal files |
-| Thu–Fri | Wireframes for 8 MVP screens | Somnath | `docs/wireframes/` |
-| **Fri 25 Jul** | **Architecture + wireframe review** | **Both** | Design approved |
+| Thu–Fri | Wireframes for 8 MVP screens | Somnath | `docs/wireframes/` ✅ approved |
+| **Fri 25 Jul** | **Architecture + wireframe review** | **Both** | ✅ Approved 17 Jul — early |
 | Sat 26 Jul | Cloud + CI + Firebase accounts | Somnath | Dev accounts live |
 | Sat 26 Jul | Razorpay test account + KYC started | Sarthak / Somnath | Razorpay access |
+| Ongoing | Monorepo scaffold | Somnath | `docs/MONOREPO.md` ✅ |
+| Fri 17 Jul | Stage A approvals locked; **v0 started** | Somnath | `docs/VERSION_0.md` · `docs/config/` · Compose |
 
 **Week 2 exit:** Architecture + ERD + OpenAPI + wireframes approved
 

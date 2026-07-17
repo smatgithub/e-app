@@ -93,14 +93,25 @@ If dates conflict: **`PROJECT_PLAN.md` §6.9 realistic timeline** overrides old 
 
 ---
 
-## Files to create during build (not yet present)
+## Design docs (P1 — for approval)
+
+| File | Status | Owner |
+|------|--------|-------|
+| `docs/architecture.md` | Draft for approval | Somnath |
+| `docs/erd.md` | Draft for approval | Somnath |
+| `docs/design-system.md` | Draft for approval | Somnath |
+| `docs/wireframes/` | Draft for approval | Somnath |
+| `docs/APPROVAL_CHECKLIST.md` | Approved 2026-07-17 | Both |
+| `docs/adr/001-mvp-tech-stack.md` | Accepted | Somnath |
+| `docs/openapi.yaml` | Draft v0.1 (MVP) | Somnath |
+| `docs/MONOREPO.md` | Scaffold guide | Somnath |
+| `docs/config/` | Platform configuration guides (Lean + Stage C) | Somnath |
+| `docs/VERSION_0.md` | v0 development scope | Somnath |
+
+## Files still to create during build
 
 | File | Created in phase | Owner |
 |------|------------------|-------|
-| `docs/architecture.md` | P1 | Somnath |
-| `docs/erd.md` | P1 | Somnath |
-| `docs/openapi.yaml` | P1 | Somnath |
-| `docs/wireframes/` | P1 | Somnath |
 | `docs/uat/uat-script.md` | P7 | Somnath |
 | `docs/runbooks/go-live.md` | P7 | Somnath |
 
@@ -118,6 +129,7 @@ If dates conflict: **`PROJECT_PLAN.md` §6.9 realistic timeline** overrides old 
 | Start **Cursor AI coding** | `SKILLS_REGISTRY.md` + `@efood-project-handler` |
 | Understand **phase gates** | `PROJECT_PLAN.md` §6 |
 | **Sign off** requirements/UAT | `REQUIREMENTS.md` §15.3 |
+| **Approve architecture + UX** | `docs/APPROVAL_CHECKLIST.md` |
 
 ---
 
